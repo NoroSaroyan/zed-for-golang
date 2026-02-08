@@ -1,0 +1,232 @@
+{
+  "agent": {
+    "expand_terminal_card": true,
+    "button": true,
+    "default_width": 640.0,
+    "play_sound_when_agent_done": false,
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o",
+    },
+  },
+  "agent_buffer_font_size": 15.0,
+  "agent_ui_font_size": 16.0,
+  "ui_font_family": ".ZedSans",
+  "ui_font_size": 16.0,
+  "buffer_font_size": 15,
+  "terminal": {
+    "cursor_shape": "block",
+    "font_size": 15.0,
+    "line_height": "standard",
+    "scroll_multiplier": 3.0,
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Dark",
+    "dark": "Ayu Dark",
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "JetBrains New UI Icons (Dark)",
+    "dark": "JetBrains New UI Icons (Dark)",
+  },
+  "autosave": "on_window_change",
+  "format_on_save": "on",
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+  "preferred_line_length": 100,
+  "soft_wrap": "bounded",
+  "vertical_scroll_margin": 10,
+  "use_smartcase_search": true,
+  "seed_search_query_from_cursor": "always",
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": false,
+  },
+  "git": {
+    "gutter": {
+      "show": true,
+    },
+    "inline_blame": {
+      "delay_ms": 900,
+    },
+  },
+  "minimap": {
+    "show": "never",
+  },
+  "scrollbar": {
+    "show": "auto",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "debugger": {
+    "dock": "right",
+    "stepping_granularity": "line",
+    "save_breakpoints": true,
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/.idea",
+    "**/.vscode",
+    "**/.venv",
+    "**/venv",
+    "**/.cache",
+    "**/node_modules",
+    "**/dist",
+    "**/build",
+    "**/target",
+  ],
+  "diagnostics": {
+    "button": true,
+    "include_warnings": true,
+  },
+  "completions": {
+    "words_min_length": 2,
+    "words": "fallback",
+    "lsp": true,
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "settings": {
+        "checkOnSave": { "command": "clippy" },
+        "diagnostics.disabled": ["unresolved-proc-macro"],
+        "assist.emitMustUse": true,
+      },
+    },
+    "gopls": {
+      "settings": {
+        "staticcheck": true,
+        "analyses": {
+          "unusedparams": true,
+          "shadow": true,
+          "fieldalignment": true,
+          "nilness": true,
+          "useany": true,
+          "nonewvars": true,
+          "undeclaredname": true,
+          "errorsAs": true,
+          "httpResponse": true,
+          "lostcancel": true,
+          "printf": true,
+          "unreachable": true,
+          "unsafeptr": true,
+        },
+        "diagnostics": {
+          "analyses": {
+            "unusedvariable": true,
+            "unusedfunction": true,
+          },
+        },
+        "codelenses": {
+          "test": true,
+          "gc_details": true,
+          "generate": true,
+          "run_govulncheck": true,
+        },
+        "formatting.gofmt": true,
+        "semanticTokens": true,
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true,
+        },
+        "usePlaceholders": true,
+        "completeUnimported": true,
+        "deepCompletion": true,
+        "matcher": "fuzzy",
+        "completionDocumentation": true,
+      },
+    },
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "tsserver": { "maxTsServerMemory": 8192 },
+          "enablePromptUseWorkspaceTsdk": true,
+          "autoFixOnSave": true,
+        },
+        "javascript": {
+          "tsserver": { "maxTsServerMemory": 8192 },
+          "autoFixOnSave": true,
+        },
+      },
+    },
+  },
+  "languages": {
+    "Rust": {
+      "tab_size": 4,
+      "hard_tabs": false,
+      "formatter": "language_server",
+    },
+    "Go": {
+      "tab_size": 4,
+      "hard_tabs": true,
+      "formatter": {
+        "external": { "command": "goimports", "arguments": [] },
+      },
+    },
+    "TypeScript": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "formatter": {
+        "external": {
+          "command": "npx",
+          "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"],
+        },
+      },
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true,
+      },
+    },
+    "TSX": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "formatter": {
+        "external": {
+          "command": "npx",
+          "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"],
+        },
+      },
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true,
+      },
+    },
+    "Java": {
+      "tab_size": 4,
+      "hard_tabs": false,
+      "formatter": "language_server",
+    },
+    "Markdown": {
+      "format_on_save": "off",
+      "soft_wrap": "preferred_line_length",
+    },
+    "JSON": {
+      "tab_size": 2,
+      "hard_tabs": false,
+    },
+    "YAML": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "formatter": {
+        "external": {
+          "command": "npx",
+          "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"],
+        },
+      },
+    },
+  },
+}
