@@ -1,8 +1,8 @@
 # Zed for Golang
 
-Production-ready Zed editor configuration optimized for Go development, with comprehensive linting, debugging, profiling, and AI integration.
+My personal Zed editor configuration optimized for Go development.
 
-A complete alternative to GoLand with native debugging UI, GPT-4o integration, and industry-standard tools.
+Production-ready setup with comprehensive linting, debugging, profiling, and AI integration.
 
 ## Features
 
@@ -23,7 +23,6 @@ A complete alternative to GoLand with native debugging UI, GPT-4o integration, a
 ### 🤖 AI Integration
 - **GPT-4o** as default AI model
 - Code completion and suggestions
-- Inline documentation
 
 ### 🔧 Editor Experience
 - Auto-save on window change
@@ -38,15 +37,6 @@ A complete alternative to GoLand with native debugging UI, GPT-4o integration, a
 - Rust with clippy checks
 - JSON, YAML, Java, Markdown
 
-### 🛠️ Helper Scripts
-Included in `.go-helpers/`:
-- `go-debug` - Interactive debugging
-- `go-profile` - CPU/Memory profiling
-- `go-bench` - Benchmark runner
-- `go-coverage` - Coverage reports
-- `go-godoc` - Documentation server
-- `go-swagger` - API documentation
-
 ## Installation
 
 ### 1. Copy Settings
@@ -54,12 +44,7 @@ Included in `.go-helpers/`:
 cp settings.json ~/.config/zed/settings.json
 ```
 
-### 2. Copy Keybindings (Optional)
-```bash
-cp keymap.json ~/.config/zed/keymap.json
-```
-
-### 3. Install Required Tools
+### 2. Install Required Tools
 
 **Essential:**
 ```bash
@@ -85,8 +70,7 @@ go install github.com/swaggo/swag/cmd/swag@latest
 go install golang.org/x/perf/cmd/benchstat@latest
 ```
 
-### 4. Linting Configuration
-Copy the golangci-lint config:
+### 3. Linting Configuration (Optional)
 ```bash
 cp .golangci.yml ~/.golangci.yml
 ```
@@ -114,24 +98,17 @@ go-coverage ./...   # Generates HTML coverage report
 ### Search
 - Select text or position cursor on a word
 - Press **Cmd+F**
-- Text auto-fills search box (like JetBrains!)
+- Text auto-fills search box
 
 ## Configuration
 
 ### Key Settings
 ```json
-"autosave": "on_window_change",          // Save on window switch
-"seed_search_query_from_cursor": "always", // Auto-fill search
-"use_smartcase_search": true,            // Smart case matching
-"vertical_scroll_margin": 10,            // Context lines while scrolling
+"autosave": "on_window_change",
+"seed_search_query_from_cursor": "always",
+"use_smartcase_search": true,
+"vertical_scroll_margin": 10
 ```
-
-### LSP Settings
-gopls is configured with:
-- Error checking (errorsAs, httpResponse, lostcancel, printf, unreachable)
-- Performance analysis (fieldalignment, nilness)
-- Code generation support
-- Comprehensive hints (types, parameters, ranges)
 
 ### Go-Specific
 ```json
@@ -155,65 +132,10 @@ gopls is configured with:
 
 ## Tools & Dependencies
 
-| Tool | Version | Purpose |
-|------|---------|---------|
-| dlv | Latest | Debugging |
-| gopls | Bundled | Language server |
-| golangci-lint | v1.64.8+ | Linting |
-| gotestsum | Latest | Test formatting |
-| goimports | Latest | Import management |
-
-## Performance Tips
-
-1. **Faster linting**: golangci-lint runs on save
-2. **Better completion**: Fuzzy matching + deep completion enabled
-3. **Reduced noise**: File scanning excludes node_modules, .git, etc.
-4. **Semantic highlighting**: Enables better code understanding
-
-## Comparison with GoLand
-
-| Feature | GoLand | Zed |
-|---------|--------|-----|
-| Debugging UI | ✅ Excellent | ✅ Native DAP |
-| Code Quality | ✅ Great | ✅ golangci-lint (100+ checks) |
-| Refactoring | ✅✅ Advanced | ✅ gopls basic |
-| Performance | Good | ✅✅ Excellent |
-| AI Assistant | Claude (paid) | ✅ GPT-4o |
-| Cost | $$$$ | Free |
-
-## Troubleshooting
-
-**Breakpoints not working?**
-- Ensure you're in a Go file
-- F4 might need a second press
-- Check `~/.config/zed/settings.json` has debugger config
-
-**gopls not analyzing?**
-- Run: `cd your-project && go list ./...`
-- gopls needs to index the module
-
-**Profiling tool missing?**
-- Install: `go install github.com/go-delve/delve/cmd/dlv@latest`
-
-## Resources
-
-- [Zed Documentation](https://zed.dev/docs)
-- [gopls Documentation](https://github.com/golang/tools/tree/master/gopls)
-- [golangci-lint Linters](https://golangci-lint.run/usage/linters/)
-- [Delve Debugger](https://github.com/go-delve/delve)
-
-## License
-
-MIT - Use freely, modify, distribute
-
-## Contributing
-
-Found a better setting? Improved the config? PRs welcome!
-
-## Author
-
-Created for professional Go development in Zed.
-
----
-
-**Questions?** Check the `.go-helpers/` directory for detailed guides and helper scripts.
+| Tool | Purpose |
+|------|---------|
+| dlv | Debugging |
+| gopls | Language server |
+| golangci-lint | Linting |
+| gotestsum | Test formatting |
+| goimports | Import management |
