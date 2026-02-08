@@ -6,32 +6,32 @@ Production-ready setup with comprehensive linting, debugging, profiling, and AI 
 
 ## Features
 
-### 🎯 Go Development
+### Go Development
 - **gopls** with 13+ advanced analyses (nilness, error checking, unused code detection)
 - **golangci-lint** with 100+ linters for code quality, security, and performance
 - **goimports** automatic import formatting
 - **Delve** native visual debugger (F4 to start)
 - Code lenses for test running, vulnerability checks, code generation
 
-### 🔍 Debugging & Profiling
+### Debugging & Profiling
 - F4: Start visual debugging with breakpoints
 - F10/F11: Step over/into code
 - CPU/Memory profiling with pprof
 - Benchmark running with gotestsum
 - Test coverage visualization
 
-### 🤖 AI Integration
+### AI Integration
 - **GPT-4o** as default AI model
 - Code completion and suggestions
 
-### 🔧 Editor Experience
+### Editor Experience
 - Auto-save on window change
 - Smart case search with seed from cursor
 - 10-line scroll margin for context
 - Inline git blame with commit summaries
 - File scanning with smart exclusions
 
-### 📝 Language Support
+### Language Support
 - Go (primary)
 - TypeScript/TSX with Prettier
 - Rust with clippy checks
